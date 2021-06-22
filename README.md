@@ -14,6 +14,7 @@ docker build -t <name_of_image>:tag
 docker images  
 ```
 if successfull created image, you will see name of your image in list.
+
 4. Run docker image and redirect port (`-p <dest_port>:<src_port>`) if necessery: 
 ```sh
 docker run -d -p <dest_port>:80 <name_of_image>:tag
@@ -28,4 +29,4 @@ Verify the deployment by navigating to your server address in your preferred bro
 127.0.0.1:<dest_port>
 ```
 
-### **Tech Task Results collected in file: TechTask_results.txt**
+### **-Tech Task Results collected in file: TechTask_results.txt**
