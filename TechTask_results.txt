@@ -1,0 +1,104 @@
+    1  ll
+    2  sudo apt-get update
+    3  sudo apt install apt-transport -https
+    4  sudo apt install apt-transport-https
+    5  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    6  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    7  sudo apt update
+    8  sudo apt install docker-ce
+    9  sudo systemctl status docker
+   10  docker -v
+   11  ll
+   12  mkdir test-project1
+   13  ll
+   14  cd test-project1
+   15  nano Dockerfile
+   16  ll
+   17  nano index.html
+   18  ll
+   19  docker build -t web_server:v1 .
+   20  sudo usermod -aG docker $USER
+   21  exit
+   22  docker ps
+   23  ll
+   24  cd test-project1
+   25  docker build -t web_server:v1
+   26  docker build -t web_server:v1 .
+   27  docker ps -a
+   28  docker ps 
+   29  docker images
+   30  docker run -d -p 1237:80 web_server
+   31  docker run -d -p 1237:80 web_server:v1
+   32  docker ps
+   33  cat index.html
+   34  ll
+   35  git
+   36  git --version
+   37  git config --global user.name "Stat_Alex"
+   38  git config --global user.email "statishnyuk@gmail.com"
+   39  git config -l
+   40  ll
+   41  cd ..
+   42  ll
+   43  cd test-project1
+   44  git init .
+   45  ll
+   46  git status
+   47  git commit -am "Added files"
+   48  git status
+   49  git add .
+   50  git commit "Added files"
+   51  git commit -m "Added files"
+   52  git log
+   53  { history 100; docker ps -a; curl -v -GET http://13.53.66.167:1237; } > TechTask_results.txt
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+468e8f4654d7   web_server:v1   "/docker-entrypoint.…"   55 minutes ago   Up 55 minutes   0.0.0.0:1237->80/tcp, :::1237->80/tcp   magical_antonelli
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test project1</title>
+</head>
+<body>
+<h1><b>Hello, World! <b></h1>
+
+</body>
+</html> 
+
+
+*   Trying 13.53.66.167:1237...
+* TCP_NODELAY set
+* Connected to 13.53.66.167 (13.53.66.167) port 1237 (#0)
+> GET / HTTP/1.1
+> Host: 13.53.66.167:1237
+> User-Agent: curl/7.68.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Server: nginx/1.21.0
+< Date: Mon, 21 Jun 2021 20:55:48 GMT
+< Content-Type: text/html
+< Content-Length: 123
+< Last-Modified: Mon, 21 Jun 2021 19:49:41 GMT
+< Connection: keep-alive
+< ETag: "60d0ed55-7b"
+< Accept-Ranges: bytes
+<
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test project1</title>
+</head>
+<body>
+<h1><b>Hello, World! <b></h1>
+
+</body>
+</html>
+
+* Connection #0 to host 13.53.66.167 left intact
